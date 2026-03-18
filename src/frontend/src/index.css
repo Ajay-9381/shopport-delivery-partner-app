@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 1 0 0;
+    --foreground: 0.15 0.02 142;
+    --card: 0.97 0.005 142;
+    --card-foreground: 0.15 0.02 142;
+    --popover: 0.97 0.005 142;
+    --popover-foreground: 0.15 0.02 142;
+    --primary: 0.55 0.18 142;
+    --primary-foreground: 0.98 0.005 0;
+    --secondary: 0.93 0.015 142;
+    --secondary-foreground: 0.2 0.03 142;
+    --muted: 0.93 0.01 142;
+    --muted-foreground: 0.45 0.05 142;
+    --accent: 0.93 0.015 142;
+    --accent-foreground: 0.2 0.03 142;
+    --destructive: 0.58 0.22 25;
+    --destructive-foreground: 0.98 0.005 25;
+    --border: 0.88 0.02 142;
+    --input: 0.88 0.02 142;
+    --ring: 0.55 0.18 142;
+    --radius: 0.75rem;
+    --chart-1: 0.55 0.18 142;
+    --chart-2: 0.58 0.15 195;
+    --chart-3: 0.65 0.15 80;
+    --chart-4: 0.58 0.18 300;
+    --chart-5: 0.68 0.12 120;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Outfit", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    background-color: white;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+  }
+}
+
+.app-shell {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  position: relative;
+  background: white;
+}
+
+.bottom-nav-safe {
+  padding-bottom: calc(64px + env(safe-area-inset-bottom));
+}
